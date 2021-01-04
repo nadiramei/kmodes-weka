@@ -28,13 +28,16 @@ public class kModes {
     static int in;
     static List<String> instansi = new ArrayList<>();
     static List<String> cluster2 = new ArrayList<>();
-    
-    private static int hammingDist(){
+    static List<Integer> hamming = new ArrayList<>();
+    static List<List<Integer>> hammingFin = new ArrayList<>();
+
+    private static List<List<Integer>> hammingDist(){
         for (int i = 0; i < ind.size(); i ++){
             in = ind.get(i);
             cluster2 = cluster1.get(i);
             System.out.println("cluster ke-" + (i + 1) + " pada indeks ke-" + in + "->" + cluster2);
 
+            hamming = new ArrayList<>();
             for (int j = 0; j < result.size(); j++){
                 instansi = result.get(j);
                 System.out.println("instansi " + j + ": " + instansi);
@@ -49,42 +52,17 @@ public class kModes {
                     
                     //System.out.println(cluster1.get(k) + "\n");
                 }
+                hamming.add(ham);
                 System.out.println("hamming: " + ham +"\n" + "-----");
             }
-
-            
+            hammingFin.add(hamming);
+            //System.out.println(hammingFin);
             
         }
 
-        /*
-        for (int i = 0; i < result.size(); i++){
-            List<String> instansi = result.get(i);
-            System.out.println(instansi);
-            System.out.println(cluster);
-            for (int j = 0; j < ind.size(); j++){
-                in = ind.get(j);
-               // System.out.println(in);
-            }
-            
-            List<String> instansi = result.get(i);
-            System.out.println(instansi);
-            System.out.println(cluster);
-            
-            ham = 0;
-            for (int l = 0; l < instansi.size(); l++){
-                //elemen = instansi.get(j);
-                
-                if(!instansi.get(j).equals(cluster.get(j))){
-                    ham++;
-                }
-                
-            }
-            System.out.println(ham);
-            System.out.println("-----");
-            */
-        return 2;
+        return hammingFin;
     }
-
+    /*
     private static int assignCentroid(){
         return 1;
     }
@@ -92,6 +70,7 @@ public class kModes {
     private static int countModes() {
         return 2;
     }
+    */
     public static void main(String[] args) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader("./golfweather.csv"))) {
 
@@ -103,7 +82,7 @@ public class kModes {
 
             System.out.println(result);
 
-            System.out.println(nilaiK(2));
+            System.out.println(nilaiK(3));
             System.out.println(hammingDist());
 
             //buat random utk k
@@ -117,10 +96,6 @@ public class kModes {
                 //for every element in list
                     //if element != cluster element
                         //hamming++
-            
-            List<String> ins = new ArrayList<String>();
-            List<String> cl = new ArrayList<String>();
-
             
             //}
             //for (int x = 0; x < cluster.size(); x++){

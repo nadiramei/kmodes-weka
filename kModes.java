@@ -23,6 +23,7 @@ public class kModes {
             cluster1.add(cluster);
             //System.out.println("cluster: " + cluster1);
         }
+        System.out.println("Indeks untuk kluster: ");
         return ind;
     } 
 
@@ -61,6 +62,7 @@ public class kModes {
             
         }
 
+        System.out.println("Hamming distance: ");
         return hammingFin;
     }
 
@@ -98,7 +100,7 @@ public class kModes {
                 result.add(Arrays.asList(values));
             }
 
-            System.out.println(result);
+            //System.out.println(result);
 
             System.out.println(nilaiK(3));
             System.out.println(hammingDist());

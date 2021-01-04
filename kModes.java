@@ -18,11 +18,12 @@ public class kModes {
             Random random = new Random();
             indeks = random.nextInt(result.size());
             cluster = result.get(indeks);
-            //System.out.println("indeks: " + indeks + "\n" + cluster + "\n");
+            System.out.println("indeks: " + indeks + "\n" + cluster + "\n");
             ind.add(indeks);
             cluster1.add(cluster);
             //System.out.println("cluster: " + cluster1);
         }
+        
         System.out.println("Indeks untuk kluster: ");
         return ind;
     } 

@@ -62,11 +62,22 @@ public class kModes {
 
         return hammingFin;
     }
-    /*
+
+    static List<Integer> apaan = new ArrayList<>();
+    static List<Integer> aaa = new ArrayList<>();
     private static int assignCentroid(){
+        for (int i = 0; i < hammingFin.size()-1; i++){
+            for (int j = i + 1; j < hammingFin.size(); j++){
+                apaan = hammingFin.get(i);
+                aaa = hammingFin.get(j);
+                System.out.println(apaan + "\n" + aaa );
+            }
+            //apaan = hammingFin.get(i);
+            //System.out.println(apaan + "\n");
+        }
         return 1;
     }
-
+    /*
     private static int countModes() {
         return 2;
     }
@@ -84,6 +95,7 @@ public class kModes {
 
             System.out.println(nilaiK(3));
             System.out.println(hammingDist());
+            System.out.println(assignCentroid());
 
             //buat random utk k
             //String elCluster;

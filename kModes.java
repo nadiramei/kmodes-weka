@@ -65,15 +65,21 @@ public class kModes {
 
     static List<Integer> apaan = new ArrayList<>();
     static List<Integer> aaa = new ArrayList<>();
+    static int coba;
     private static int assignCentroid(){
         for (int i = 0; i < hammingFin.size()-1; i++){
             for (int j = i + 1; j < hammingFin.size(); j++){
                 apaan = hammingFin.get(i);
                 aaa = hammingFin.get(j);
-                System.out.println(apaan + "\n" + aaa );
+                System.out.println(apaan + "\n" + aaa + "\n-----");
+                /*
+                for (int k = 0; k < apaan.size(); k++){
+                    coba = apaan.get(k);
+                    System.out.println(coba + "\n");
+                }
+                */
+                
             }
-            //apaan = hammingFin.get(i);
-            //System.out.println(apaan + "\n");
         }
         return 1;
     }

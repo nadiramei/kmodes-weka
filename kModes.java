@@ -67,9 +67,9 @@ public class kModes {
             System.out.println(ham);
             System.out.println("-----");
             */
-        return 2;
+        //return 2;
     }
-
+    /*
     private static int assignCentroid(){
         return 1;
     }
@@ -77,6 +77,7 @@ public class kModes {
     private static int countModes() {
         return 2;
     }
+    */
     public static void main(String[] args) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader("./golfweather.csv"))) {
 

@@ -39,11 +39,17 @@ public class kModes {
                 instansi = result.get(j);
                 System.out.println("instansi " + j + ": " + instansi);
 
+                ham = 0;
                 for (int k = 0; k < instansi.size(); k++){
-                    System.out.println(instansi.get(k));
-                    System.out.println(cluster2.get(k)+"\n" + "-----");
+                    //System.out.println(instansi.get(k));
+                    //System.out.println(cluster2.get(k) + "\n");
+                    if(!instansi.get(k).equals(cluster2.get(k))){
+                        ham++;
+                    }
+                    
                     //System.out.println(cluster1.get(k) + "\n");
                 }
+                System.out.println("hamming: " + ham +"\n" + "-----");
             }
 
             

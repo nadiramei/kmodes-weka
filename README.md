@@ -1,4 +1,3 @@
-Referenced Paper: 
 # K-Modes Algorithm
 K-Modes algorithm is a variant of the k-means algorithm that uses modes to represent clusters instead of means, using simple matching dissimilarity measure, or the Hamming distance, instead of Euclidian distance. It is optimized for clustering categorical data.
 

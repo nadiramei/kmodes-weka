@@ -4,8 +4,7 @@ import java.util.Random;
 
 public class kModes {
     private final static String COMMA_DELIMITER = ",";
-    //private int k;
-    //private static String elCluster;
+
     private static int ham;
     private static List<List<String>> result = new ArrayList<>();
     private static List<String> cluster = new ArrayList<>();
@@ -18,7 +17,7 @@ public class kModes {
             Random random = new Random();
             indeks = random.nextInt(result.size());
             cluster = result.get(indeks);
-            System.out.println("indeks: " + indeks + "\n" + cluster + "\n");
+            //System.out.println("indeks: " + indeks + "\n" + cluster + "\n");
             ind.add(indeks);
             cluster1.add(cluster);
             //System.out.println("cluster: " + cluster1);
@@ -28,16 +27,26 @@ public class kModes {
 
     static int in;
     static List<String> instansi = new ArrayList<>();
+    static List<String> cluster2 = new ArrayList<>();
     
-    private static int hammingDist (){
+    private static int hammingDist(){
         for (int i = 0; i < ind.size(); i ++){
             in = ind.get(i);
-            System.out.println(in + "->" + cluster);
+            cluster2 = cluster1.get(i);
+            System.out.println("cluster ke-" + (i + 1) + " pada indeks ke-" + in + "->" + cluster2);
 
             for (int j = 0; j < result.size(); j++){
-                instansi = result.get(i);
-                //System.out.println(instansi);
+                instansi = result.get(j);
+                System.out.println("instansi " + j + ": " + instansi);
+
+                for (int k = 0; k < instansi.size(); k++){
+                    System.out.println(instansi.get(k));
+                    System.out.println(cluster2.get(k)+"\n" + "-----");
+                    //System.out.println(cluster1.get(k) + "\n");
+                }
             }
+
+            
             
         }
 
@@ -67,9 +76,9 @@ public class kModes {
             System.out.println(ham);
             System.out.println("-----");
             */
-        //return 2;
+        return 2;
     }
-    /*
+
     private static int assignCentroid(){
         return 1;
     }
@@ -77,7 +86,6 @@ public class kModes {
     private static int countModes() {
         return 2;
     }
-    */
     public static void main(String[] args) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader("./golfweather.csv"))) {
 

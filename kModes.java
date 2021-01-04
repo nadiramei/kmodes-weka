@@ -10,40 +10,43 @@ public class kModes {
     private static List<List<String>> result = new ArrayList<>();
     private static List<String> cluster = new ArrayList<>();
     static int indeks;
+    static List<Integer> ind = new ArrayList<>();
 
-    private static int nilaiK (int k){
+    private static List<Integer> nilaiK (int k){
         for (int i = 0; i < k; i ++){
             Random random = new Random();
             indeks = random.nextInt(result.size());
-            //System.out.println(indeks);
             cluster = result.get(indeks);
-            System.out.println(indeks + "\n" + cluster + "\n" + "===");
+            System.out.println("indeks: " + indeks + "\n" + cluster + "\n");
+            ind.add(indeks);
         }
-        return indeks;
-        
+        return ind;
     } 
 
     private static int hammingDist (){
         for (int i = 0; i < result.size(); i++){
-            List<String> instansi = result.get(i); //new ArrayList<String[]>();
-            System.out.println(instansi);
-            //for (int j = 0; j < instansi.size(); j++){
-            //    elemen = instansi.get(j);
-                //System.out.println(elemen + "-");
-           // }
-            System.out.println(cluster);
-            
-            ham = 0;
-            for (int j = 0; j < instansi.size(); j++){
-                //elemen = instansi.get(j);
+            for (int j = 0; j < ind.size(); j++){
+                List<String> instansi = result.get(i);
+                System.out.println(instansi);
+                //for (int j = 0; j < instansi.size(); j++){
+                //    elemen = instansi.get(j);
+                    //System.out.println(elemen + "-");
+                // }
+                System.out.println(cluster);
                 
-                if(!instansi.get(j).equals(cluster.get(j))){
-                    ham++;
+                ham = 0;
+                for (int l = 0; l < instansi.size(); l++){
+                    //elemen = instansi.get(j);
+                    
+                    if(!instansi.get(j).equals(cluster.get(j))){
+                        ham++;
+                    }
+                    
                 }
-                
+                System.out.println(ham);
+                System.out.println("-----");
             }
-            System.out.println(ham);
-            System.out.println("-----");
+            
         }
         return ham;
     }

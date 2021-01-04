@@ -11,6 +11,7 @@ public class kModes {
     static int indeks;
     static List<Integer> ind = new ArrayList<>();
     static List<List<String>> cluster1 = new ArrayList<>();
+    static Integer k;
 
     private static List<Integer> nilaiK (int k){
         for (int i = 0; i < k; i ++){
@@ -35,12 +36,12 @@ public class kModes {
         for (int i = 0; i < ind.size(); i ++){
             in = ind.get(i);
             cluster2 = cluster1.get(i);
-            System.out.println("cluster ke-" + (i + 1) + " pada indeks ke-" + in + "->" + cluster2);
+            //System.out.println("cluster ke-" + (i + 1) + " pada indeks ke-" + in + "->" + cluster2);
 
             hamming = new ArrayList<>();
             for (int j = 0; j < result.size(); j++){
                 instansi = result.get(j);
-                System.out.println("instansi " + j + ": " + instansi);
+                //System.out.println("instansi " + j + ": " + instansi);
 
                 ham = 0;
                 for (int k = 0; k < instansi.size(); k++){
@@ -53,7 +54,7 @@ public class kModes {
                     //System.out.println(cluster1.get(k) + "\n");
                 }
                 hamming.add(ham);
-                System.out.println("hamming: " + ham +"\n" + "-----");
+                //System.out.println("hamming: " + ham +"\n" + "-----");
             }
             hammingFin.add(hamming);
             //System.out.println(hammingFin);
@@ -66,12 +67,12 @@ public class kModes {
     static List<Integer> apaan = new ArrayList<>();
     static List<Integer> aaa = new ArrayList<>();
     static int coba;
-    private static int assignCentroid(){
+    private static List<Integer> assignCentroid(){
         for (int i = 0; i < hammingFin.size()-1; i++){
             for (int j = i + 1; j < hammingFin.size(); j++){
                 apaan = hammingFin.get(i);
                 aaa = hammingFin.get(j);
-                System.out.println(apaan + "\n" + aaa + "\n-----");
+                //System.out.println(apaan + "\n" + aaa + "\n-----");
                 /*
                 for (int k = 0; k < apaan.size(); k++){
                     coba = apaan.get(k);
@@ -81,7 +82,7 @@ public class kModes {
                 
             }
         }
-        return 1;
+        return apaan; //????
     }
     /*
     private static int countModes() {
@@ -101,7 +102,7 @@ public class kModes {
 
             System.out.println(nilaiK(3));
             System.out.println(hammingDist());
-            System.out.println(assignCentroid());
+            //System.out.println(assignCentroid());
 
             //buat random utk k
             //String elCluster;

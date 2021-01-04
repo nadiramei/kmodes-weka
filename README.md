@@ -10,5 +10,3 @@ K-Modes algorithm is a variant of the k-means algorithm that uses modes to repre
 ## Reference Paper
 <br>
 Kami menggunakan beberapa referensi paper yang tersedia diatas yaitu : </div>
-1.
-2.

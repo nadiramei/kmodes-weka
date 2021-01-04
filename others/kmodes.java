@@ -63,6 +63,28 @@ public class kmodes {
 
     }
     
+    private static List<Integer> assignCentroid() {
+        ArrayList<ArrayList<Integer>> centroid = new ArrayList<ArrayList<Integer>>();
+
+        ArrayList<Integer> Datacount = new ArrayList<Integer>();
+        for (int i = 0; i < centroid.size(); i++) {
+            Datacount.add(0);
+        }
+
+        for (int i = 0; i < centroid.get(0).size(); i++) {
+            ArrayList<Integer> data_mut = new ArrayList<Integer>();
+            for (int j = 0; j < centroid.size(); j++) {
+                data_mut.add(centroid.get(j).get(i));
+            }
+            int index_min = data_mut.indexOf(Collections.min(data_mut));
+            int count_data_min = Datacount.get(index_min) + 1;
+            Datacount.set(index_min, count_data_min);
+            data_mut.clear();
+        }
+        System.out.println(Datacount);
+        return assignCentroid();
+    }
+    
     public k_cluster (double instance, string[] k) {
         
     }
